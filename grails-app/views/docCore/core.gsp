@@ -54,10 +54,6 @@
           <td>${core.relationshipIdentifier}</td>
         </tr>
         <tr>
-          <td><b>creator</b></td>
-          <td>${core.creator} [${core.creatorRole}]</td>
-        </tr>
-        <tr>
           <td><b>subjects</b></td>
           <td>
             <table style>
@@ -95,7 +91,7 @@
       <table>
         <thead>
           <tr>
-            <th/>
+            
             <th>label</th>
             <th>generation</th>
             <th>physical format</th>
@@ -104,29 +100,26 @@
         <tbody>
         <g:each in="${core.physInst}" var="physInst">
           <tr>
-          <g:if test="${physInst.mediaType} == Sound">
+            
             <td>
-              <img src="${createLinkTo(dir: 'images/icons', file: 'cd_32x32.png')}" widht="20px" height="20px"/>
+              <g:link controller="physInst" action="instance" id="${physInst.id}">${physInst.label}</g:link>
             </td>
-          </g:if>
-          <td>
-            <g:link controller="physInst" action="instance" id="${physInst.id}">${physInst.label}</g:link>
-          </td>
-          <td>${physInst.generation}</td>
-          <td> ${physInst.physDesc}</td>
-        </tr>
+            <td>${physInst.generation}</td>
+            <td> ${physInst.physDesc}</td>
+          </tr>
         </g:each>
-        <tr>
-          <td>
-            <g:link controller="physInst" action="createSoundInstance" id="${core.id}">
-              add sound Instance
-            </g:link>
-            <g:link controller="physInst" action="createMovingImageInstance" id="${core.id}">
-              add moving image Instance
-            </g:link>
-          </td>
-          <td/>
-        </tr>
+          <tr>
+            <td>
+              <g:link controller="physInst" action="createSoundInstance" id="${core.id}">
+                + sound Instance
+              </g:link>
+              <br />
+              <g:link controller="physInst" action="createMovingImageInstance" id="${core.id}">
+                + moving image Instance
+              </g:link>
+            </td>
+            <td/>
+          </tr>
       </tbody>
       </table>
       <br />

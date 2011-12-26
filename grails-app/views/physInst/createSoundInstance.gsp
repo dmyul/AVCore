@@ -17,12 +17,8 @@
         <g:link controller="collection" action="col" id="${core.collection.id}">${core.collection.identifier}: ${core.collection.title}</g:link>
       </h1>
       <h2>${core.title}</h2>
-      <g:link controller="docCore" action="deleteCore" id="${core.id}">
-        <img src="${createLinkTo(dir: 'images/icons', file: 'delete_32x32.png')}" width="20px" height="20px"/>
-      </g:link>
-      <img src="${createLinkTo(dir: 'images/icons', file: 'edit_32x32.png')}" width="20px" height="20px"/>
-      <img src="${createLinkTo(dir: 'images/icons', file: 'wrench_32x32.png')}" width="20px" height="20px"/>
     </div>
+    <br />
     <div id="form">
       <h3>Create a new physical Instance</h3>
       <g:form action="commitInst" method="post">
