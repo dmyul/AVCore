@@ -10,6 +10,10 @@ class DocCoreController {
         [core: DocCore.get(params.id)]
     }
     
+    def coreLab = {
+        [core: DocCore.get(params.id)]
+    }
+    
     def createCore = {
         
         def col = Collection.get(params.colId)

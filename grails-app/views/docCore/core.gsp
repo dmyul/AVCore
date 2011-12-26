@@ -9,13 +9,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="layout" content="main"/>
-    <title>AV/Core</title>
+    <title>Sample title</title>
   </head>
-    <body>
-      <div style="background-color: #5f5964; color: #fff; padding-left: 10px">
-      <h1>
-        <g:link controller="collection" action="col" id="${core.collection.id}">${core.collection.identifier}: ${core.collection.title}</g:link>
-      </h1>
+  <body>
+    <g:javascript library="jqTabs"/>
+    <div class="demo">
+      <div style=" padding-left: 10px;">
+        <h1>
+          <g:link controller="collection" action="col" id="${core.collection.id}">${core.collection.identifier}: ${core.collection.title}</g:link>
+        </h1>
       <h2>${core.title}</h2>
       <g:link controller="docCore" action="deleteCore" id="${core.id}">
         <img src="${createLinkTo(dir: 'images/icons', file: 'delete_32x32.png')}" width="20px" height="20px"/>
@@ -23,7 +25,17 @@
       <img src="${createLinkTo(dir: 'images/icons', file: 'edit_32x32.png')}" width="20px" height="20px"/>
       <img src="${createLinkTo(dir: 'images/icons', file: 'wrench_32x32.png')}" width="20px" height="20px"/>
       </div>
-      <table>
+      <br />
+      <div id="tabs">
+        <ul>
+          <li><a href="#content">Intellectual Content</a></li>
+          <li><a href="#property">Intellectual Property</a></li>
+          <li><a href="#phys">Physical Instances</a></li>
+          <li><a href="#digi">Digital Instances</a></li>
+        </ul>
+        
+	<div id="content" style="color:black">
+        <table>
         <tr>
           <td width="15%"><b>asset type</b></td>
           <td>${core.assetType}</td>
@@ -42,21 +54,22 @@
           <td>${core.description}</td>
         </tr>
         <tr>
-          <td><b>creator</b></td>
+          <td><b>Creator</b></td>
           <td>${core.creator} [${core.creatorRole}]</td>
         </tr>
         <tr>
-          <td><b>relationshipType</b></td>
+          <td><b>Relationship Type</b></td>
           <td>${core.relationshipType}</td>
         </tr>
         <tr>
-          <td><b>relationshipIdentifier</b></td>
+          <td><b>Relationship Identifier</b></td>
           <td>${core.relationshipIdentifier}</td>
         </tr>
+        
         <tr>
           <td><b>subjects</b></td>
           <td>
-            <table style>
+            <table>
               <g:each in="${core.subject}" var="subject">
                 <tr>
                   <td>${subject.subject}</td>
@@ -71,9 +84,15 @@
           </td>
         </tr>
       </table>
-      <br />
-      <div style="background-color: #5f5964; color: #fff; padding: 10px"><h2>Intellectual Property</h2></div>
-      <table>
+        </div>
+        
+        
+	<div id="property" style="color:black">
+          <table>
+        <tr>
+          <td><b>contributor</b></td>
+          <td>${core.contributor} [${core.contributorRole}]</td>
+        </tr>
         <tr>
           <td><b>publisher</b></td>
           <td>${core.publisher} [${core.publisherRole}]</td>
@@ -84,11 +103,12 @@
         </tr>
         
       </table>
-      <br />
-      <div style="background-color: #5f5964; color: #fff; padding: 10px">
-      <h2>Physical Instances</h2>
-      </div>
-      <table>
+        </div>
+        
+        
+	<div id="phys" style="color:black">
+          
+          <table>
         <thead>
           <tr>
             
@@ -122,11 +142,9 @@
           </tr>
       </tbody>
       </table>
-      <br />
-      <div style="background-color: #5f5964; color: #fff">
-      <h2>Digital Instances</h2>
-      </div>
-      <table>
+        </div>
+        <div id="digi" style="color:black">
+          <table>
         <thead>
           <tr>
             <th/>
@@ -158,5 +176,8 @@
         </tr>
       </tbody>
       </table>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
