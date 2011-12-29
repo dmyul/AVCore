@@ -1,5 +1,7 @@
 package edu.yale.yul.avcore
 
+import grails.converters.XML
+
 class PhysInstController {
 
     def scaffold = PhysInst
@@ -42,5 +44,23 @@ class PhysInstController {
         def core = delPhys.getDocCore().id
         delPhys.delete()
         redirect(controller: "docCore", action: "core", id: core) 
+    }
+    
+    def editSoundPhysInst = {
+        def physIns = PhysInst.get(params.id)
+        render physIns as XML
+    }
+    
+    def editMovingImageInst = {
+        def physIns = PhysInst.get(params.id)
+        render physIns as XML
+    }
+    
+    def soundInstance = {
+        [ins: PhysInst.get(params.id)]    
+    }
+    
+    def movingImageInstance = {
+        [ins: PhysInst.get(params.id)]
     }
 }

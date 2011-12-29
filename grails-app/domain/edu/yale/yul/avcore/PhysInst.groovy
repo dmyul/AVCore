@@ -19,22 +19,16 @@ class PhysInst {
     
     
     static belongsTo = [docCore: DocCore]
+    
     static constraints = {
-        barcode(nullable:true)
-        label(nullable:true)
-        date(nullable:true)
-        dateType(nullable:true)
-        physDesc(nullable:true)
-        dimensions(nullable:true)
-        dimensionsType(nullable:true)
-        location(nullable:true)
-        mediaType(nullable:true)
-        generation(nullable:true)
+
+        dimensions(nullable: true)
+        dimensionsType(nullable: true)
         tracks(nullable:true)
-        channelConfiguration(nullable:true)
-        colors(nullable:true)
-        material(nullable:true)
-        sound(nullable:true)
+        channelConfiguration(nullable: true)
+        colors(nullable: true)
+        material(nullable: true)
+        sound(nullable: true)
     }
     
     String toString(){

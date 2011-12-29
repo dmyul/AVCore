@@ -13,20 +13,20 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "update"
+            dbCreate = 'update'
             url = "jdbc:mysql://localhost:3306/avcore"
         }
     }
     test {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://localhost:3306/avcore"
+            url = "jdbc:hsqldb:mem:testDb"
         }
     }
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://mssaserver04.library.yale.edu:3306/avcore"
+            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
         }
     }
 }

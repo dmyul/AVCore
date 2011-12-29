@@ -113,19 +113,29 @@
           <tr>
             
             <th>label</th>
+            <th>media type</th>
             <th>generation</th>
             <th>physical format</th>
+            <th>actions</th>
           </tr>
         </thead>
         <tbody>
         <g:each in="${core.physInst}" var="physInst">
           <tr>
-            
+            <g:if test="${physInst.mediaType.equals('Sound')}">
             <td>
-              <g:link controller="physInst" action="instance" id="${physInst.id}">${physInst.label}</g:link>
+              <g:link controller="physInst" action="soundInstance" id="${physInst.id}">${physInst.label}</g:link>
             </td>
+            </g:if>
+            <g:if test="${physInst.mediaType.equals('Moving image')}">
+            <td>
+              <g:link controller="physInst" action="movingImageInstance" id="${physInst.id}">${physInst.label}</g:link>
+            </td>
+            </g:if>
+            <td>${physInst.mediaType}</td>
             <td>${physInst.generation}</td>
-            <td> ${physInst.physDesc}</td>
+            <td>${physInst.physDesc}</td>
+            <td>view edit delete</td>
           </tr>
         </g:each>
           <tr>
@@ -149,31 +159,42 @@
           <tr>
             <th/>
             <th>label</th>
+            <th>media type</th>
             <th>generation</th>
             <th>physical format</th>
+            <th>actions</th>
           </tr>
         </thead>
         <tbody>
         <g:each in="${core.digInst}" var="digInst">
           <tr>
-            <g:if test="${digInst.mediaType} == Sound">
+            <g:if test="${digInst.mediaType.equals('sound')}">
               <td>
                 <img src="${createLinkTo(dir: 'images/icons', file: 'file_32x32.png')}" widht="20px" height="20px"/>
               </td>    
             </g:if>
+            <g:else>
+              <td>
+                MOV
+              </td> 
+            </g:else>
             <td>
               <g:link controller="digInst" action="instance" id="${digInst.id}">${digInst.fileName}</g:link> 
             </td>
+            <td>${digInst.mediaType}</td>
             <td>${digInst.generation}</td>
             <td>${digInst.standard}]</td>
+            <td>view edit delete</td>
           </tr>
       </g:each>
         <tr>
           <td>
-              <img src="${createLinkTo(dir: 'images/icons', file: 'add_32x32.png')}" width="12px" height="12px"/>
-          </td><td/><td/><td/>
+            + sound file<br />+ moving image file
+          </td>
+          <td/><td/><td/>
           <td />
         </tr>
+
       </tbody>
       </table>
         </div>

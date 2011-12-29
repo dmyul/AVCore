@@ -16,7 +16,6 @@ class DocCore {
     String publisher
     String publisherRole
     String rightsStatement
-    
     String contributor
     String contributorRole 
     
@@ -27,20 +26,8 @@ class DocCore {
     static hasMany = [subject:Subject, physInst:PhysInst, digInst:DigInst, relation: Relation]
     
     static constraints = {
-        rightsStatement(size:0..2147483646, nullable:true)
-        assetType(nullable:true)
-        assetDate(nullable:true)
-        title(nullable:true)
-        identifier(nullable:true)
-        description(nullable:true)
-        creator(nullable:true)
-        creatorRole(nullable:true)
-        relationshipIdentifier(nullable:true)
-        relationshipType(nullable:true)
-        publisher(nullable:true)
-        publisherRole(nullable:true)
-        contributor(nullable:true)
-        contributorRole(nullable:true) 
+        rightsStatement(size:0..2147483646)
+
     }
     
     static mapping = {
