@@ -28,13 +28,13 @@
       <br />
       <div id="tabs">
         <ul>
-          <li><a href="#content">Intellectual Content</a></li>
-          <li><a href="#property">Intellectual Property</a></li>
+          <li><a href="#content">Intellectual Information</a></li>
           <li><a href="#phys">Physical Instances</a></li>
           <li><a href="#digi">Digital Instances</a></li>
         </ul>
         
 	<div id="content" style="color:black">
+          <h2>Content</h2>
         <table>
         <tr>
           <td width="15%"><b>asset type</b></td>
@@ -48,23 +48,15 @@
           <td><b>identifier</b></td>
           <td>${core.identifier}</td>
         </tr>
-        
+        <tr>
+          <td><b>creator</b></td>
+          <td><b>${core.creator}</b></td>
+        </tr>
         <tr>
           <td><b>description</b></td>
           <td>${core.description}</td>
         </tr>
-        <tr>
-          <td><b>Creator</b></td>
-          <td>${core.creator} [${core.creatorRole}]</td>
-        </tr>
-        <tr>
-          <td><b>Relationship Type</b></td>
-          <td>${core.relationshipType}</td>
-        </tr>
-        <tr>
-          <td><b>Relationship Identifier</b></td>
-          <td>${core.relationshipIdentifier}</td>
-        </tr>
+        
         
         <tr>
           <td><b>subjects</b></td>
@@ -83,20 +75,40 @@
             </table>
           </td>
         </tr>
+        
+        <tr>
+          <td><b>Relationships</b></td>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  <img src="${createLinkTo(dir: 'images/icons', file: 'add_32x32.png')}" width="12px" height="12px"/>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+          </td>
+        </tr>
       </table>
-        </div>
+          
+      <br />
+      <br />
+      <h2>Property</h2>
         
-        
-	<div id="property" style="color:black">
+	
           <table>
         <tr>
-          <td><b>contributor</b></td>
-          <td>${core.contributor} [${core.contributorRole}]</td>
+          <td><b>Contributer</b></td>
+          <td></td>
         </tr>
+        <tr><td>+ contributer</td></tr>
         <tr>
-          <td><b>publisher</b></td>
-          <td>${core.publisher} [${core.publisherRole}]</td>
+          <td><b>Publisher</b></td>
+          <td></td>
         </tr>
+        <tr><td>+ contributer</td></tr>
+        </tr>    
         <tr>
           <td><b>rights summary</b></td>
           <td>${core.rightsStatement}</td>

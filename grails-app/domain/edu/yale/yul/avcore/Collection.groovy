@@ -11,6 +11,7 @@ class Collection {
     static hasMany = [docCore:DocCore]
     static constraints = {
         description(size:0..2147483646)
+        repository(nullable: true)
         
     }
     

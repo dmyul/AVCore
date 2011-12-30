@@ -31,6 +31,12 @@
               </td>
             </tr>
             <tr>
+              <td>identifier</td>
+              <td>
+                <g:textField name="identifier"/>
+              </td>
+            </tr>
+            <tr>
               <td>title</td>
               <td><g:textField name="title"/></td>
             </tr>
@@ -39,25 +45,14 @@
               <td><g:textField name="description"/></td>
             </tr>
             <tr>
-              <td>creator</td>
-              <td><g:textField name="creator"/></td>
+              <td>creator name</td>
+              <td><g:textField name="creatorName"/></td>
             </tr>
             <tr>
               <td>creator role</td>
-              <td><g:select name="creatorRole" from="${vocab.getAt(1).concept}"/></td>
+              <td><g:textField name="creatorRole"/></td>
             </tr>
             <tr>
-              <td>publisher</td>
-              <td><g:textField name="publisher"/></td>
-            </tr>
-            <tr>
-              <td>publisher role</td>
-              <td><g:select name="publisherRole" from="${vocab.getAt(2).concept}"/></td>
-            </tr>
-            <tr>
-              <td>rights statement</td>
-              <td><g:textArea name="rightsStatement"/></td>
-            </tr>
             <tr>
               <td/>
               <td><g:submitButton name="create" value="create unit"/></td>

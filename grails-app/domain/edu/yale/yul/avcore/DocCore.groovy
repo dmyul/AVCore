@@ -7,31 +7,22 @@ class DocCore {
     String title
     String identifier
     String description
-    String creator
-    String creatorRole
-    String relationshipIdentifier
-    String relationshipType
-    
-    //Intellectual Property
-    String publisher
-    String publisherRole
+    CorePerson creator
     String rightsStatement
-    String contributor
-    String contributorRole 
-    
-    
-    
+
     static belongsTo = [collection:Collection]
     
-    static hasMany = [subject:Subject, physInst:PhysInst, digInst:DigInst, relation: Relation]
+    static hasMany = [subject:Subject, physInst:PhysInst, digInst:DigInst, relation: Relation, people: CorePerson]
     
     static constraints = {
-        rightsStatement(size:0..2147483646)
+        rightsStatement(nullable: true, size:0..2147483646)
+        identifier(nullable: true)
 
     }
     
     static mapping = {
-        rightsStatement type: 'text'
+        rightsStatement(type: 'text')
+        
     }
     
     String toString(){

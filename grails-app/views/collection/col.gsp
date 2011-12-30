@@ -14,7 +14,8 @@
   <body>
     
     <h1>${cols.identifier}: ${cols.title} <g:link action="inventory" id="${cols.id}">[view inventory]</g:link></h1>
-      <p><b>source</b>: ${cols.source}</br><b>description</b>:<br />${cols.description}</p>
+      <p><b>source</b>: ${cols.source}</p>
+      <p><b>description</b>:${cols.description}</p>
       <br />
       <g:if test="${cols.docCore.size() > 0}">
         <h2>Bibliographic Units</h2>
@@ -46,11 +47,12 @@
             </tr>
           </tfoot>
         </table>
-        <g:form controller="docCore" action="createCore" method="post">
+        
+      </g:if>
+      <g:form controller="docCore" action="createCore" method="post">
           <g:hiddenField name="colId" value="${cols.id}"/>
           <g:submitButton name="submit" value="create new unit"/>
         </g:form>
-      </g:if>
 
   </body>
 </html>

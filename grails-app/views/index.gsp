@@ -54,9 +54,9 @@
         
         <div id="pageBody">
             
-
-            <div id="controllerList" class="dialog">
-                <h2>Available Controllers:</h2>
+          <h2><g:link action="cols" controller="collection">Go to application</g:link></h2>
+          <div id="controllerList" class="dialog">
+                <br /><h2>Scaffolding:</h2>
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
                         <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>

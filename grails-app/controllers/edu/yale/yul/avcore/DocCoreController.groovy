@@ -1,6 +1,6 @@
 package edu.yale.yul.avcore
 
-import grails.converters.JSON
+import grails.converters.XML
 
 class DocCoreController {
 
@@ -38,12 +38,26 @@ class DocCoreController {
     }
     
     def commit = {
+        def creator = new Person()
+        creator.name = params.creatorName
+        creator.save(flush: true, failOnError: true)
+        
+        def corePerson = new CorePerson()
+        corePerson.person = creator
+        corePerson.type = "creator"
+        corePerson.role = params.creatorRole
+        corePerson.save(flush: true, failOnError: true)
+        
+        
         
         def col = Collection.get(params.colId)
         def newCore = new DocCore(params)
         newCore.setCollection(col)
+        newCore.creator = corePerson
         newCore.save(flush: true, failOnError: true);
+        
         redirect (action: core, id: newCore.id)
+      
     }
     
     
