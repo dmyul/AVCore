@@ -24,14 +24,17 @@
       <g:form action="commitInst" method="post">
         <table>
           <tbody>
+            
+            <tr>
+              <td>media type</td>
+              <td><g:textField name="mediaType" value="Moving image"/></td>
+            </tr>
+            
             <tr>
               <td>label</td>
               <td><g:textField name="label"/></td>
             </tr>
-            <tr>
-              <td>media type</td>
-              <td><g:textField name="mediaType" value=""mediaType"/></td>
-            </tr>
+            
             <tr>
               <td>generation</td>
               <td><g:select name="generation" from="${['Original recording', 'Copy: access', 'Master: preservation']}"/></td>
@@ -62,12 +65,18 @@
             </tr>
             <tr>
               <td>dimensions type</td>
-              <td><g:select name="dimensionsType" from="${['inches']}"/></td>
+              <td><g:select name="dimensionsType" from="${['inches', 'feet']}"/></td>
             </tr>
             <tr>
               <td>material</td>
               <td><g:textField name="material"/></td>
             </tr>
+            
+            
+           <tr>
+              <td>colors</td>
+              <td><g:textField name="colors"/></td>
+            </tr>  
             <tr>
               <td>sound field</td>
               <td><g:textField name="sound"/></td>

@@ -6,6 +6,7 @@ class BootStrap {
     def init = { servletContext ->
         new PBCoreVocab(concept: "1/4 inch audio tape", type: "PhysicalInstance").save(failOnError: true)
         new PBCoreVocab(concept: "Audio cassette", type: "PhysicalInstance").save(failOnError: true)
+        new PBCoreVocab(concept: "Film: 16mm", type: "PhysicalInstance").save(failOnError: true)
         new PBCoreVocab(concept: "CD", type: "PhysicalInstance").save(failOnError: true)
         new PBCoreVocab(concept: "CDR", type: "PhysicalInstance").save(failOnError: true)
         new PBCoreVocab(concept: "Interviewer", type: "CreatorRole").save(failOnError: true)

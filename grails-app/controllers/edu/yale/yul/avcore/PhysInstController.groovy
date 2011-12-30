@@ -30,7 +30,13 @@ class PhysInstController {
         def newPI = new PhysInst(params)
         newPI.setDocCore(core)
         newPI.save(flush: true, failOnError: true)
-        redirect (action: instance, id: newPI.id)
+        flash.message = "New Instance created"
+        
+        if(newPI.mediaType.equals('Sound'))
+            redirect (action: soundInstance, id: newPI.id)
+            
+        else if(newPI.mediaType.equals('Moving image'))
+            redirect (action: movingImageInstance, id: newPI.id)
     }
     
     def updatePhysInst = {
@@ -41,6 +47,8 @@ class PhysInstController {
         
         if(instance.mediaType.equals('Sound'))
             redirect (action: soundInstance, id: instance.id)
+        else if(instance.mediaType.equals('Moving image'))
+            redirect (action: movingImageInstance, id: instance.id)
     }
     
     def deletePhysInst = {
@@ -58,9 +66,12 @@ class PhysInstController {
         [dType:dType, pIns: pIns, instance: physIns]
     }
     
-    def editMovingImageInst = {
+    def editMovingImagePhysInst = {
         def physIns = PhysInst.get(params.id)
-        render physIns as XML
+        def dType = PBCoreVocab.findAllByType("DateType")
+        def pIns = PBCoreVocab.findAllByType("PhysicalInstance")
+        
+        [dType:dType, pIns: pIns, instance: physIns]
     }
     
     def soundInstance = {
