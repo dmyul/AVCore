@@ -10,23 +10,17 @@ class PhysInstController {
         [ins: PhysInst.get(params.id)]
     }
     
-    def createSoundInstance = {
+    def createSoundPhysInstance = {
         def core = DocCore.get(params.id)
-        def dType = PBCoreVocab.findAllByType("dateType")
+        def dType = PBCoreVocab.findAllByType("DateType")
         def pIns = PBCoreVocab.findAllByType("PhysicalInstance")
         [core:core, dType:dType, pIns: pIns]
     }
     
-    def createMovingImageInstance = {
-        def core = DocCore.get(params.id)
-        def dType = PBCoreVocab.findAllByType("dateType")
-        def pIns = PBCoreVocab.findAllByType("PhysicalInstance")
-        [core:core, dType:dType, pIns: pIns]
-    }
     
-    def createMovingPhysicalInstance = {
+    def createMovingImagePhysInstance = {
         def core = DocCore.get(params.id)
-        def dType = PBCoreVocab.findAllByType("dateType")
+        def dType = PBCoreVocab.findAllByType("DateType")
         def pIns = PBCoreVocab.findAllByType("PhysicalInstance")
         [core:core, dType:dType, pIns: pIns]
     }
@@ -39,6 +33,16 @@ class PhysInstController {
         redirect (action: instance, id: newPI.id)
     }
     
+    def updatePhysInst = {
+        def instance = PhysInst.get(params.instanceId)
+        instance.properties = params
+        instance.save(flush: true, failOnError: true)
+        flash.message = "Object updated"
+        
+        if(instance.mediaType.equals('Sound'))
+            redirect (action: soundInstance, id: instance.id)
+    }
+    
     def deletePhysInst = {
         def delPhys = PhysInst.get(params.id)
         def core = delPhys.getDocCore().id
@@ -48,7 +52,10 @@ class PhysInstController {
     
     def editSoundPhysInst = {
         def physIns = PhysInst.get(params.id)
-        render physIns as XML
+        def dType = PBCoreVocab.findAllByType("DateType")
+        def pIns = PBCoreVocab.findAllByType("PhysicalInstance")
+   
+        [dType:dType, pIns: pIns, instance: physIns]
     }
     
     def editMovingImageInst = {

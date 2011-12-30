@@ -144,6 +144,7 @@
               <g:link controller="physInst" action="movingImageInstance" id="${physInst.id}">${physInst.label}</g:link>
             </td>
             </g:if>
+            
             <td>${physInst.mediaType}</td>
             <td>${physInst.generation}</td>
             <td>${physInst.physDesc}</td>
@@ -152,12 +153,12 @@
         </g:each>
           <tr>
             <td>
-              <g:link controller="physInst" action="createSoundInstance" id="${core.id}">
-                + sound Instance
+              <g:link controller="physInst" action="createSoundPhysInstance" id="${core.id}">
+                + sound instance
               </g:link>
               <br />
-              <g:link controller="physInst" action="createMovingImageInstance" id="${core.id}">
-                + moving image Instance
+              <g:link controller="physInst" action="createMovingImagePhysInstance" id="${core.id}">
+                + moving image instance
               </g:link>
             </td>
             <td/>
