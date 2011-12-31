@@ -1,5 +1,4 @@
-import edu.yale.yul.avcore.PBCoreVocab
-import edu.yale.yul.avcore.Collection
+import edu.yale.yul.avcore.*
 
 class BootStrap {
 
@@ -18,11 +17,34 @@ class BootStrap {
         new PBCoreVocab(concept: "Created", type: "DateType").save(failOnError: true)
         new PBCoreVocab(concept: "Copyright holder", type: "PublisherRole").save(failOnError: true)
         
-        new Collection(title: "Test Collection", 
+        def p = new Person(name: "John W. Cook");
+        p.save(failOnError: true)
+        
+        def corePerson = new CorePerson(person: p, type:"Creator", role: "Interviewer");
+        corePerson.save(failOnError: true)
+        
+        def col = new Collection(title: "Test Collection", 
             identifier: "ms.0",
             description: "This is a test collection",
             source: "ms atk"
         ).save(failOnError: true);
+        
+        col.save(failOnError: true);
+        
+        def core = new  DocCore(
+            identifier: "ms.1873.kahn",
+            assetDate: new Date(),
+            assetType: "Event",
+            collection: col,
+            creator: corePerson,
+            description: "Interview with Louis I. Kahn (2 audiotapes)",
+            title: "Kahn, Louis"
+        )
+        
+        core.save(failOnError: true);
+        
+        
+        
     }
     def destroy = {
     }
