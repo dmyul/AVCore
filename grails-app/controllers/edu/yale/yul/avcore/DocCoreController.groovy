@@ -62,6 +62,9 @@ class DocCoreController {
         //build document
         xml.pbcoreCollection(
             xmlns:'http://www.pbcore.org/PBCore/PBCoreNamespace.html',
+            'xmlns:xsi':'http://www.w3.org/2001/XMLSchema-instance',
+            'xsi:schemaLocation':
+                'http://www.pbcore.org/PBCore/PBCoreNamespace.html http://pbcore.org/xsd/pbcore-2.0.xsd',
             collectionTitle: core.collection.title,
             collectionDescription: core.collection.description){
                 pbcoreDescriptionDocument{
@@ -77,8 +80,11 @@ class DocCoreController {
                 }
         }
         
+        def output = new StringWriter()
+        output.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
+        output.append(writer.toString())
         //render document to screen
-        render writer.toString()
+        render output.toString()
         
         
     }
