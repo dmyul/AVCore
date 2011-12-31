@@ -19,11 +19,20 @@
           <g:link controller="collection" action="col" id="${core.collection.id}">${core.collection.identifier}: ${core.collection.title}</g:link>
         </h1>
       <h2>${core.title}</h2>
+      
+      <!-- delete a core -->
       <g:link controller="docCore" action="deleteCore" id="${core.id}">
         <img src="${createLinkTo(dir: 'images/icons', file: 'delete_32x32.png')}" width="20px" height="20px"/>
       </g:link>
+      
+      <!-- Edit a core -->
       <img src="${createLinkTo(dir: 'images/icons', file: 'edit_32x32.png')}" width="20px" height="20px"/>
+      
+      <!-- export pbCore -->
+      <g:link action="pbCore" id="${core.id}">
       <img src="${createLinkTo(dir: 'images/icons', file: 'wrench_32x32.png')}" width="20px" height="20px"/>
+      </g:link>
+      
       </div>
       <br />
       <div id="tabs">
