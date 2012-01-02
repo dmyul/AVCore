@@ -15,10 +15,12 @@
         
         <div style="width:75%;margin-left: 12.5%">
           <div style="color: #E6E6E6; font-size: x-large; font-family:Gill, Helvetica, sans-serif">AV/Core</div>
-        <g:layoutBody />
+          <g:link controller="PBCoreVocab" action="admin">admin</g:link>
+          <g:layoutBody />
         
-      <br /><hr />
-      <p>footer
+          <br />
+          <hr />
+          <p>very much in dev</p>
         </div>
     </body>
 </html>
