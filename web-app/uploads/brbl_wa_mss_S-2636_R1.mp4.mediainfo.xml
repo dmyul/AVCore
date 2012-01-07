@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mediainfo version="0.7.51">
+<File>
+<track type="General">
+<Complete_name>brbl_wa_mss_S-2636_R1.mp4</Complete_name>
+<Format>MPEG-4</Format>
+<Format_profile>Base Media / Version 2</Format_profile>
+<Codec_ID>mp42</Codec_ID>
+<File_size>161 MiB</File_size>
+<Duration>15mn 5s</Duration>
+<Overall_bit_rate>1 493 Kbps</Overall_bit_rate>
+<Encoded_date>UTC 2011-11-02 22:07:27</Encoded_date>
+<Tagged_date>UTC 2011-11-02 22:07:27</Tagged_date>
+</track>
+
+<track type="Video">
+<ID>1</ID>
+<Format>AVC</Format>
+<Format_Info>Advanced Video Codec</Format_Info>
+<Format_profile>Main@L3.2</Format_profile>
+<Format_settings__CABAC>Yes</Format_settings__CABAC>
+<Format_settings__ReFrames>2 frames</Format_settings__ReFrames>
+<Codec_ID>avc1</Codec_ID>
+<Codec_ID_Info>Advanced Video Coding</Codec_ID_Info>
+<Duration>15mn 5s</Duration>
+<Bit_rate_mode>Variable</Bit_rate_mode>
+<Bit_rate>1 490 Kbps</Bit_rate>
+<Maximum_bit_rate>1 500 Kbps</Maximum_bit_rate>
+<Width>640 pixels</Width>
+<Height>480 pixels</Height>
+<Display_aspect_ratio>4:3</Display_aspect_ratio>
+<Frame_rate_mode>Constant</Frame_rate_mode>
+<Frame_rate>29.970 fps</Frame_rate>
+<Standard>NTSC</Standard>
+<Color_space>YUV</Color_space>
+<Chroma_subsampling>4:2:0</Chroma_subsampling>
+<Bit_depth>8 bits</Bit_depth>
+<Scan_type>Progressive</Scan_type>
+<Bits__Pixel_Frame_>0.162</Bits__Pixel_Frame_>
+<Stream_size>161 MiB (100%)</Stream_size>
+<Language>English</Language>
+<Encoded_date>UTC 2011-11-02 22:07:27</Encoded_date>
+<Tagged_date>UTC 2011-11-02 22:07:27</Tagged_date>
+</track>
+
+</File>
+</Mediainfo>
+

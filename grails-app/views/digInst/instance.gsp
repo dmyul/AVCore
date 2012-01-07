@@ -26,8 +26,8 @@
     <img src="${createLinkTo(dir: 'images/icons', file: 'edit_32x32.png')}" width="20px" height="20px"/>
     <table>
       <tr>
-        <td width="15%"><b>${ins.fileName}<b></td>
-        <td></td>
+        <td width="15%"><b>fileName<b></td>
+        <td><b>${ins.fileName}<b></td>
       </tr>
       <tr>
         <td>date</td>

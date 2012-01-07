@@ -211,7 +211,14 @@
       </g:each>
         <tr>
           <td>
-            + sound file<br />+ moving image file
+            <g:link controller="digInst" action="addInstance" 
+                    id="${core.id}" params="[mediaType: 'Sound']">
+              + sound file
+            </g:link><br />
+            <g:link controller="digInst" action="addInstance" 
+                    id="${core.id}" params="[mediaType: 'Moving image']">
+              + moving image file
+            </g:link><br />
           </td>
           <td/><td/><td/>
           <td />

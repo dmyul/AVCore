@@ -77,6 +77,20 @@ class DocCoreController {
                         creator(source: 'pbCoreCreatorRole', core.creator.person.name)
                         creatorRole(core.creator.role)
                     }
+                    core.physInst.each{ instance ->
+                        pbcoreInstantion{
+                            instantiationIdentifier(source:"barcode", instance.barcode)
+                            instantiationIdentifier(source:core.collection.source, instance.label)
+                            instantiationDate(dateType: instance.dateType, instance.date)
+                            instantiationDimensions(unitsOfMeasure: instance.dimensionsType, instance.dimensions)
+                            instantiationPhysica(source: "pbCoreInstantiationPhysical", ref: null, instance.physDesc)
+                            instantiationLocation(instance.location)
+                            instantiationMediaType(source: "pbCoreInstantiationMediaType", ref: null, instance.mediaType)
+                            instantiationGenerations(source: "pbCoreInstantiationGenerations", ref: null, instance.generation)
+                            instantiationTracks(instance.tracks)
+                            instantiationChannelConfig(instance.channelConfiguration)
+                        }
+                    }
                 }
         }
         
