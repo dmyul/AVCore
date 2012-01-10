@@ -26,9 +26,12 @@ class DigInstanceService {
         }
     }
     
-    def date(String s) {
-        encDate = java.sql.Date.valueOf(s);
-        
-        return encDate
+    def dataRate(String s) {
+        Pattern p = Pattern.compile("^\\d \\d*");
+        Matcher m = p.matcher(s)
+            if(m.find()) {
+                def s2 = m.group.split(" ")
+                return Integer.parseInt(s2)
+            }
     }
 }

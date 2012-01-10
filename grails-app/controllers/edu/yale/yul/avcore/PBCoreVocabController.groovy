@@ -3,7 +3,7 @@ package edu.yale.yul.avcore
 class PBCoreVocabController {
     
     def index = {
-        def scaffold = PBCoreVocab
+    def scaffold = PBCoreVocab
     }
     
     def admin = {

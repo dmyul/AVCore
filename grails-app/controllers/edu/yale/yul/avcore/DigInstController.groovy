@@ -45,7 +45,9 @@ class DigInstController {
                     di.fileSize = helper.fileSize(it.File_size.toString())
                     di.fileSizeType = helper.fileSizeType(it.File_size.toString())
                     di.dateType = "encoded"
-                    di.date = helper.date(it.Encoded_date.toString())
+                    di.date = java.sql.Date.valueOf(it.Encoded_date.toString().substring(4,14).trim())
+                    di.standard = it.Format
+                    di.dataRate = helper.dataRate(it.Overall_bit_rate.toString())
                     /*
                     render "Collection: " + core.collection.title + "<br />" 
                     render "Core: " + core.title + "<br />" 

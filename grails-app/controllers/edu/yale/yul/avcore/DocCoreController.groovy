@@ -89,6 +89,13 @@ class DocCoreController {
                             instantiationGenerations(source: "pbCoreInstantiationGenerations", ref: null, instance.generation)
                             instantiationTracks(instance.tracks)
                             instantiationChannelConfig(instance.channelConfiguration)
+                            instantiationExtension{
+                                extensionWrap{
+                                    extensionElement("baseMaterial")
+                                    extensionValue(instance.material)
+                                    extensionAuthorityUsed("YUL_AV_Extension")
+                                }
+                            }
                         }
                     }
                 }
