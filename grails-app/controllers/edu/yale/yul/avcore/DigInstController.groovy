@@ -37,6 +37,29 @@ class DigInstController {
             
             def doc = new XmlSlurper().parse(f)
             
+            //determine track count
+            HashMap<String, Integer> tracks = new HashMap<String, Integer>(["General": 0, "Video": 0, "Audio": 0])
+            doc.File.track.each{
+                if(it.@type.equals("General")) {
+                    def a = tracks.getAt("General")
+                    a++
+                    tracks.putAt("General", a)
+                }
+                else if(it.@type.equals("Video")) {
+                    def a = tracks.getAt("Video") 
+                    a++
+                    tracks.putAt("Video", a)
+                }
+                else if(it.@type.equals("Audio")) {
+                    def a = tracks.getAt("Audio") 
+                    a++
+                    tracks.putAt("Audio", a)
+                }
+            }
+            
+            println tracks
+            println tracks.getClass()
+            
             DigInst di = new DigInst();
             doc.File.track.each{
                 if(it.@type.equals("General")) {
@@ -48,20 +71,14 @@ class DigInstController {
                     di.date = java.sql.Date.valueOf(it.Encoded_date.toString().substring(4,14).trim())
                     di.standard = it.Format
                     di.dataRate = helper.dataRate(it.Overall_bit_rate.toString())
-                    /*
-                    render "Collection: " + core.collection.title + "<br />" 
-                    render "Core: " + core.title + "<br />" 
-                    render "Complete_name: " + it.Complete_name + "<br />"
-                    render "Format: " + it.Format + "<br />"
-                    render "Format_profile: " + it.Format_profile + "<br />"
-                    render "Codec_ID: " + it.Codec_ID + "<br />"
-                    render "File_size: " + it.File_size + "<br />"
-                    render "Duration: " + it.Duration + "<br />"
-                    render "Encoded_date: " + it.Encoded_date + "<br />"
-                    render "Overall_bit_rate: " + it.Overall_bit_rate + "<br />"
-                    */
+                    di.dataRateType = helper.dataRateType(it.Overall_bit_rate.toString())
+                    di.duration = helper.duration(it.Duration.toString())
+                    di.annotation = "Format_profile: " + it.Format_profile + ", Codec_ID: " + it.Codec_ID
+                    
+
                 }
             }
+            di.tracks = helper.tracks(tracks)
             di.docCore = core
             di.mediaType = params.mediaType
             

@@ -42,11 +42,7 @@
         <td>${ins.standard}</td>
       </tr><tr>
         <td>file size</td>
-        <td>${ins.fileSize}</td>
-      </tr>
-      <tr>
-        <td>unit</td>
-        <td>${ins.fileSizeType}</td>
+        <td>${ins.fileSize}<b> [${ins.fileSizeType}]</b></td>
       </tr>
       <tr>
         <td>duration</td>
@@ -54,11 +50,7 @@
       </tr>
       <tr>
         <td>data rate</td>
-        <td>${ins.dataRate}</td>
-      </tr>
-      <tr>
-        <td>unit</td>
-        <td>${ins.dataRateType}</td>
+        <td>${ins.dataRate}<b> [${ins.dataRateType}]</b></td>
       </tr>
       <tr>
         <td>location</td>
