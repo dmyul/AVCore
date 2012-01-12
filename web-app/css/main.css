@@ -22,13 +22,13 @@ body {
 }
 
 a:link, a:visited, a:hover {
-    color: #30273a;
+    color: #2e6e9e;
     font-weight: bold;
     text-decoration: none;
 }
 
 h1 {
-    color: #30273a;
+    color: #2e6e9e;
     font-weight: normal;
     font-size: 16px;
     margin: .8em 0 .3em 0;
