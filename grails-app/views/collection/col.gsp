@@ -13,10 +13,11 @@
   </head>
   <body>
     
-    <h1>${cols.identifier}: ${cols.title} <g:link action="inventory" id="${cols.id}">[view inventory]</g:link></h1>
-      <p><b>source</b>: ${cols.source}</p>
-      <p><b>description</b>:${cols.description}</p>
-      <br />
+    <h2>${cols.identifier}: ${cols.title} <g:link action="inventory" id="${cols.id}">[view inventory]</g:link></h2>
+      <div class="alt">
+        <em><strong>source</strong></em>: ${cols.source}<br />
+        <em><strong>description</strong></em>:${cols.description}
+      </div>
       <g:if test="${cols.docCore.size() > 0}">
         <h2>Bibliographic Units</h2>
         <table id="unitTable">

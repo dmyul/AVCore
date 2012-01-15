@@ -13,7 +13,7 @@
   </head>
   <body>
     
-    <h1>AV/Core Collections</h1>
+    <h2>AV/Core Collections</h2>
       <table>
         <thead>
           <tr>

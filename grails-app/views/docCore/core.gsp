@@ -15,9 +15,9 @@
     <g:javascript library="jqTabs"/>
     <div class="demo">
       <div style=" padding-left: 10px;">
-        <h1>
+        <h2>
           <g:link controller="collection" action="col" id="${core.collection.id}">${core.collection.identifier}: ${core.collection.title}</g:link>
-        </h1>
+        </h2>
       <h2>${core.title}</h2>
       
       <!-- delete a core -->
@@ -34,7 +34,7 @@
       </g:link>
       
       </div>
-      <br />
+      
       <div id="tabs">
         <ul>
           <li><a href="#content">Intellectual Information</a></li>
@@ -43,7 +43,7 @@
         </ul>
         
 	<div id="content" style="color:black">
-          <h2>Content</h2>
+          <h4>Content</h4>
         <table>
         <tr>
           <td width="15%"><b>asset type</b></td>
@@ -103,7 +103,7 @@
           
       <br />
       <br />
-      <h2>Property</h2>
+      <h4>Property</h4>
         
 	
           <table>
