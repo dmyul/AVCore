@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mediainfo version="0.7.51">
+<File>
+<track type="General">
+<Complete_name>1-01 Cold Rain and Snow.mp3</Complete_name>
+<Format>MPEG Audio</Format>
+<File_size>7.86 MiB</File_size>
+<Duration>6mn 2s</Duration>
+<Overall_bit_rate_mode>Variable</Overall_bit_rate_mode>
+<Overall_bit_rate>182 Kbps</Overall_bit_rate>
+<Album>Steppin' Out</Album>
+<Part_Position>1</Part_Position>
+<Part_Total>4</Part_Total>
+<Track_name>Cold Rain and Snow</Track_name>
+<Track_name_Position>01</Track_name_Position>
+<Track_name_Total>13</Track_name_Total>
+<Performer>Grateful Dead</Performer>
+<Genre>Rock</Genre>
+<Recorded_date>1972</Recorded_date>
+<Writing_library>LAME3.96r</Writing_library>
+<Cover>Yes</Cover>
+<Cover_MIME>image/jpeg</Cover_MIME>
+<Comment>Track 1</Comment>
+</track>
+
+<track type="Audio">
+<Format>MPEG Audio</Format>
+<Format_version>Version 1</Format_version>
+<Format_profile>Layer 3</Format_profile>
+<Mode>Joint stereo</Mode>
+<Mode_extension>MS Stereo</Mode_extension>
+<Duration>6mn 2s</Duration>
+<Bit_rate_mode>Variable</Bit_rate_mode>
+<Bit_rate>182 Kbps</Bit_rate>
+<Minimum_bit_rate>128 Kbps</Minimum_bit_rate>
+<Channel_s_>2 channels</Channel_s_>
+<Sampling_rate>44.1 KHz</Sampling_rate>
+<Compression_mode>Lossy</Compression_mode>
+<Stream_size>7.85 MiB (100%)</Stream_size>
+<Writing_library>LAME3.96r</Writing_library>
+<Encoding_settings>-m j -V 2 -q 3 -lowpass 19 --vbr-old -b 128</Encoding_settings>
+</track>
+
+</File>
+</Mediainfo>
+

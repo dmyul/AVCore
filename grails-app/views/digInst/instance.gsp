@@ -42,31 +42,40 @@
         <td>${ins.standard}</td>
       </tr><tr>
         <td>file size</td>
-        <td>${ins.fileSize}<b> [${ins.fileSizeType}]</b></td>
+        <td>${ins.fileSize} ${ins.fileSizeType}</td>
       </tr>
       <tr>
         <td>duration</td>
-        <td>${ins.duration}</td>
+        <td>${ins.duration} s</td>
       </tr>
       <tr>
         <td>data rate</td>
-        <td>${ins.dataRate}<b> [${ins.dataRateType}]</b></td>
+        <td>${ins.dataRate} ${ins.dataRateType}</td>
       </tr>
-      <tr>
-        <td>location</td>
-        <td>${ins.location}</td>
-      </tr>
+      
       <tr>
         <td>media type</td>
         <td>${ins.mediaType}</td>
       </tr>
+      
+      <tr>
+        <td>tracks</td>
+        <td>${ins.tracks}</td>
+      </tr>
+      
+      <tr>
+        <td>annotation</td>
+        <td>${ins.annotation}</td>
+      </tr>
+      
       <tr>
         <td>generation</td>
         <td>${ins.generation}</td>
       </tr>
+      
       <tr>
-        <td>tracks</td>
-        <td>${ins.tracks}</td>
+        <td>location</td>
+        <td>${ins.location}</td>
       </tr>
       <tr>
         <td>checksum</td>
@@ -80,10 +89,7 @@
         <td>channel config</td>
         <td>${ins.channelConfiguration}</td>
       </tr>
-      <tr>
-        <td>annotation</td>
-        <td>${ins.annotation}</td>
-      </tr>
+      
     </table>
     <br /><h2>Essences</h2>
   <g:each in="${ins.essence}" var="essence">
@@ -98,28 +104,59 @@
       </tr>
       <tr>
         <td>encoding</td>
-        <td>${essence.trackEncoding}</td>
+        <td>${essence.trackEncoding} [${essence.trackEncodingProfile}]</td>
       </tr>
       <tr>
         <td width="15%">bit depth</td>
         <td>${essence.trackBitDepth}</td>
       </tr>
+      
+      <g:if test="${essence.trackSamplingRate != 0}">
       <tr>
         <td>sampling rate</td>
         <td>${essence.trackSamplingRate} ${essence.trackSamplingRateUnit}</td>
       </tr>
+      </g:if>
+      
+      <g:if test="${essence.trackFrameRate != 0}">
+      <tr>
+        <td>frame rate</td>
+        <td>${essence.trackFrameRate} fps</td>
+      </tr>
+      </g:if>
+      
+      <tr>
+        <td>frame size</td>
+        <td>${essence.trackFrameSize}</td>
+      </tr>
+      
       <tr>
         <td>data rate</td>
         <td>${essence.trackDataRate} ${essence.trackDataRateUnit} (${essence.trackDataRateType})</td>
       </tr>
+      
+      <g:if test="${!(essence.trackTimeStart == null)}"
       <tr>
         <td>time offset</td>
         <td>${essence.trackTimeStart}</td>
       </tr>
+      </g:if>
       <tr>
         <td>duration</td>
-        <td>${essence.trackDuration}</td>
+        <td>${essence.trackDuration} s</td>
       </tr>
+      
+      
+      <tr>
+        <td>aspect ratio</td>
+        <td>${essence.trackAspectRatio}</td>
+      </tr>
+      
+      <tr>
+        <td>track annotation</td>
+        <td>${essence.trackAnnotation}</td>
+      </tr>
+
     </table>
   </g:each>
    </body>
